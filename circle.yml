@@ -10,7 +10,7 @@ dependencies:
     - docker build -t ticklish/atftpd .
 test:
   override:
-    - docker run -d -p 69:69/udp ticklish/atftpd; sleep 10
+    - docker run -d -p 69:69/udp ticklish/atftpd
     - ./test && test -f validation
 
 notify:
