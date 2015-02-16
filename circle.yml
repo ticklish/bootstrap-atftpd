@@ -12,3 +12,7 @@ test:
   override:
     - docker run -d -p 69:69/udp ticklish/atftpd; sleep 10
     - ./test && test -f validation
+
+notify:
+  webhooks:
+    - url: $WEBHOOK_URL
