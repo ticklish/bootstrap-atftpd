@@ -1,0 +1,26 @@
+{
+  "id": "atftpd-controller",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "replicaSelector": {"name": "atftpd"},
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+          "id": "atftpd-controller",
+          "containers": [{
+            "name": "tftpd",
+            "image": "ticklish/atftpd",
+            "ports": [{"containerPort": 69, "hostPort": 69, "protocol": "UDP"}]
+          }]
+        }
+      },
+      "labels": {
+        "name": "atftpd"
+      }
+    }
+  },
+  "labels": {"name": "atftpd"}
+}

@@ -13,6 +13,7 @@ RUN apt-get -y update \
     && cd /tftpboot \
     && wget http://alpha.release.core-os.net/amd64-usr/current/coreos_production_pxe.vmlinuz \
     && wget http://alpha.release.core-os.net/amd64-usr/current/coreos_production_pxe_image.cpio.gz \
+    && chown nobody:nobody *
     && echo "Used for testing" > validation
       
 CMD /usr/sbin/atftpd --user nobody.nogroup --daemon --no-fork --port 69 --logfile /dev/stdout /tftpboot
