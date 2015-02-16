@@ -15,4 +15,4 @@ test:
 
 notify:
   webhooks:
-    - url: $WEBHOOK_URL
+    - url: https://registry.hub.docker.com/u/ticklish/atftpd/trigger/b519f851-39eb-4b59-8104-d7b5a56083f4/
