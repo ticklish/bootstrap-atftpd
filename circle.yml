@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - apt-get install tftp
+    - sudo apt-get install tftp
   override:
     - docker info
     - docker build -t ticklish/atftpd .
