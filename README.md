@@ -1,5 +1,7 @@
 # bootstrap-atftpd
 
+[![Circle CI](https://circleci.com/gh/ticklish/bootstrap-atftpd.svg?style=svg)](https://circleci.com/gh/ticklish/bootstrap-atftpd)
+
 This is the build and configuration for the atftpd container used within bootstrapping a k8s master on bare-metal upon CoreOS.
 
 As k8s currently doesn't support exposing UDP ports this is ran directly via fleet using the service file provided.
