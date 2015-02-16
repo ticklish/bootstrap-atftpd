@@ -11,7 +11,7 @@ dependencies:
 test:
   override:
     - docker run -d -p 69:69/udp ticklish/atftpd; sleep 10
-    - echo "get /coreos_production_pxe.vmlinuz" | tftp localhost
+    - ./test && test -f validation
 
 deployment:
   hub:

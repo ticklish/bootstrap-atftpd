@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+set timeout 10
+spawn tftp localhost
+expect "tftp>"
+send "connect localhost\r"
+expect "tftp>"
+send "get /validation\r"
+expect "tftp>"
