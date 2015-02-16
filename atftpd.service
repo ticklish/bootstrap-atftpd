@@ -1,0 +1,10 @@
+[Unit]
+Description=etcd
+Requires=setup-network-environment.service
+After=etcd.service
+[Service]
+EnvironmentFile=/etc/network-environment
+User=core
+ExecStart=/usr/bin/docker run -d -p 69:69/udp ticklish/atftpd
+Restart=always
+RestartSec=5s
