@@ -3,12 +3,15 @@ machine:
     - docker
 
 dependencies:
+  pre:
+    - apt-get install tftp
   override:
     - docker info
     - docker build -t ticklish/atftpd .
 test:
   override:
     - docker run -d -p 69:69/udp ticklish/atftpd; sleep 10
+    - echo "get /coreos_production_pxe.vmlinuz" | tftp localhost
 
 deployment:
   hub:

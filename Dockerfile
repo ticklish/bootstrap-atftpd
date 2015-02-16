@@ -14,5 +14,4 @@ RUN apt-get -y update \
     && wget http://alpha.release.core-os.net/amd64-usr/current/coreos_production_pxe.vmlinuz \
     && wget http://alpha.release.core-os.net/amd64-usr/current/coreos_production_pxe_image.cpio.gz
       
-
-RUN ls -lhart /tftpboot/
+CMD /usr/sbin/atftpd --user nobody.nogroup --daemon --no-fork --port 69 --logfile /dev/stdout /tftpboot
